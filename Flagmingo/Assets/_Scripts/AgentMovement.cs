@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class AgentMovement : MonoBehaviour
@@ -14,43 +15,46 @@ public class AgentMovement : MonoBehaviour
 
     [field: SerializeField] public MovementDataSO MovementData { get; set; }
 
-    protected float currentVelocity;
-    protected Vector2 moveDirection;
-
+    protected Vector2 currentVelocity;
+    protected float horizontal;
+    protected float vertical;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void MoveAgent(Vector2 movementInput)
+    public void MoveAgent(InputAction.CallbackContext context)
     {
-        // This makes sure that deceleration works.
-        if (movementInput.magnitude > 0)
-        {
-            moveDirection = movementInput.normalized;
-        }
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
 
-        currentVelocity = CalculateSpeed(movementInput);
+        if (context.canceled)
+            Debug.LogWarning("Cancelled");
+        currentVelocity = CalculateSpeed();
+
+        StartCoroutine(CheckInput(context));
     }
 
-    private float CalculateSpeed(Vector2 movementInput)
+    private Vector2 CalculateSpeed()
     {
-        if (movementInput.magnitude > 0)
-        {
-            currentVelocity += MovementData.acceleration * Time.deltaTime;
-        }
-        else
-        {
-            currentVelocity -= MovementData.deceleration * Time.deltaTime;
-        }
-
-        return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
+        return new Vector2(horizontal * MovementData.maxSpeed, vertical * MovementData.maxSpeed);
     }
 
     private void FixedUpdate()
     {
-        OnVelocityChange?.Invoke(currentVelocity);
-        rb.velocity = currentVelocity * moveDirection.normalized;
+        OnVelocityChange?.Invoke(rb.velocity.magnitude);
+        rb.velocity = currentVelocity;
+    }
+
+    private IEnumerator CheckInput(InputAction.CallbackContext context)
+    {
+        yield return null;
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
+
+        Debug.LogWarning("Hor: " + horizontal + ", Ver: " + vertical);
+
+        currentVelocity = CalculateSpeed();
     }
 }

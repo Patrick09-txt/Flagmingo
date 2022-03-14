@@ -12,5 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37b86bbb03911e4db35c03a9c7d887a, type: 3}
   m_Name: Player 1 Control Inputs
   m_EditorClassIdentifier: 
-  MoveHorizontal: 119
-  MoveVertical: 0
+  MoveHorizontal:
+    m_Name: Move Horizontal
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e29a77a0-b48d-4be6-9655-e8669dc3fe5a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f9451435-0071-428d-b6ca-17dc097e69d4
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 0
+    - m_Name: WASD
+      m_Id: a9685f11-301f-4e64-b97c-21e7404a6308
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 4
+    - m_Name: up
+      m_Id: fb6b8754-0e98-4296-a6f0-7399fa48cef4
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 8
+    - m_Name: down
+      m_Id: fec48e9d-9810-43a0-8862-94d0655aeaff
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 674cc6b3-fe9f-4275-acb1-c545f38b5ab6
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 8
+    - m_Name: right
+      m_Id: aab7aca9-a02a-4063-aa5b-3d3b98297ce6
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Horizontal
+      m_Flags: 8
+    m_Flags: 0
+  MoveVertical:
+    m_Name: Move Vertical
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6e3ff0bd-f4a2-4290-9584-6033e67056b8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class AgentRenderer : MonoBehaviour
@@ -12,8 +13,10 @@ public class AgentRenderer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-    public void FaceDirection(Vector2 pointerInput)
+    public void FaceDirection(InputAction.CallbackContext context)
     {
+        Vector2 pointerInput = context.ReadValue<Vector2>();
+
         // Finds the direction from the player to the pointer.
         var dir = (Vector3)pointerInput - transform.position;
         

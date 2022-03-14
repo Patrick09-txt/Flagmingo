@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AgentWeapon : MonoBehaviour
 {
@@ -21,8 +22,10 @@ public class AgentWeapon : MonoBehaviour
         weapon = GetComponentInChildren<Weapon>();
     }
 
-    public virtual void AimWeapon(Vector2 pointerPos)
+    public virtual void AimWeapon(InputAction.CallbackContext context)
     {
+        Vector2 pointerPos = context.ReadValue<Vector2>();
+
         var aimDir = (Vector3)pointerPos - transform.position;
         // Neat math!
         desiredAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
@@ -41,21 +44,31 @@ public class AgentWeapon : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public void Shoot(InputAction.CallbackContext context)
     {
-        // This instead of just "weapon?." because we need to remove the weapons at runtime
         if (weapon != null)
         {
-            weapon.TryShooting();
+            if (context.action.triggered)
+            {
+                // This instead of just "weapon?." because we need to remove the weapons at runtime
+                if (weapon != null)
+                {
+                    weapon.TryShooting();
+                }
+            }
+            if (context.canceled)
+            {
+                weapon.StopShooting();
+            }
         }
     }
 
-    public void StopShooting()
-    {
-        // This instead of just "weapon?." because we need to remove the weapons at runtime
-        if (weapon != null)
-        {
-            weapon.StopShooting();
-        }
-    }
+    //public void StopShooting()
+    //{
+    //    // This instead of just "weapon?." because we need to remove the weapons at runtime
+    //    if (weapon != null)
+    //    {
+    //        weapon.StopShooting();
+    //    }
+    //}
 }

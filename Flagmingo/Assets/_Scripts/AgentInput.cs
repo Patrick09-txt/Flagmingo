@@ -28,6 +28,8 @@ public class AgentInput : MonoBehaviour, IAgentInput
         mainCamera = Camera.main;
     }
 
+    /*
+     * 
     // Update is called once per frame
     private void Update()
     {
@@ -70,4 +72,6 @@ public class AgentInput : MonoBehaviour, IAgentInput
             }
         }
     }
+
+    */
 }
