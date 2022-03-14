@@ -50,6 +50,9 @@ TagManager:
   - name: Agents
     uniqueID: 2583889309
     locked: 0
+  - name: Bullets
+    uniqueID: 1829608809
+    locked: 0
   - name: ForegroundElements
     uniqueID: 3937991003
     locked: 0
