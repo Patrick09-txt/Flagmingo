@@ -4,10 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum PlayerInput
+{
+    PlayerOne,
+    PlayerTwo
+}
 public class AgentInput : MonoBehaviour, IAgentInput
 {
     private Camera mainCamera;
     private bool fireButtonDown = false;
+
+    [Header("Inputs")]
+    public PlayerInput PlayerInput;
 
     [field: SerializeField] public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
     [field: SerializeField] public UnityEvent<Vector2> OnPointerPositionChange { get; set; }

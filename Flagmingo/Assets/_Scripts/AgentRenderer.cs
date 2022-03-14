@@ -22,12 +22,12 @@ public class AgentRenderer : MonoBehaviour
 
         if (result.z > 0)
         {
-            sr.flipX = true;
+            sr.flipX = false;
         }
 
         else if (result.z < 0)
         {
-            sr.flipX = false;
+            sr.flipX = true;
         }
     }
 }
