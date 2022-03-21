@@ -22,6 +22,7 @@ public class SpawnPoint : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.cyan;
         if (SpawnPointGizmo == Gizmo.Sphere)
         {
             Gizmos.DrawWireSphere(transform.position, SpawnAreaSize1);
