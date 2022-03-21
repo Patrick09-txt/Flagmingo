@@ -798,6 +798,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d5c198b6d9a7a498fc0dd726258ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: -944628639613478452, guid: d8f529964cfd91241a3a50edfe5cb552, type: 3}
+  inputScheme:
+    m_Name: 
+    m_BindingGroup: 
+    m_DeviceRequirements: []
 --- !u!114 &3891278603345910556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,7 +853,7 @@ MonoBehaviour:
   - {x: -0.32654533, y: -0.3345064, z: 0}
   m_ShapePathHash: -426355576
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32254
+  m_InstanceId: 40912
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0

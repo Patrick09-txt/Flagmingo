@@ -53,8 +53,6 @@ public class AgentMovement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
 
-        Debug.LogWarning("Hor: " + horizontal + ", Ver: " + vertical);
-
         currentVelocity = CalculateSpeed();
     }
 }
