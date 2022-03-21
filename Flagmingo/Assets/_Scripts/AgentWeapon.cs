@@ -25,18 +25,18 @@ public class AgentWeapon : MonoBehaviour
     public virtual void AimWeapon(InputAction.CallbackContext context)
     {
         Vector2 pointerPos = context.ReadValue<Vector2>();
-        //var aimDir = new Vector3();
+        var aimDir = new Vector3();
 
-        var aimDir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
+        //var aimDir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
 
-        //if (context.GetType() == typeof(Mouse))
-        //{
-        //    aimDir = AimWeaponMouse((Vector3)pointerPos) - transform.position;
-        //}
-        //else
-        //{
-        //    aimDir = (Vector3)pointerPos - transform.position;
-        //}
+        if (context.control.name == "position")
+        {
+            aimDir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
+        }
+        else if (context.control.name == "rightStick")
+        {
+            aimDir = (Vector3)pointerPos;
+        }
 
         // Neat math!
         desiredAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;

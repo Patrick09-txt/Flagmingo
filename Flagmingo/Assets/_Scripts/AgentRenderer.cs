@@ -6,25 +6,20 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(SpriteRenderer))]
 public class AgentRenderer : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset input;
-    [SerializeField] private InputControlScheme inputScheme;
-    InputDevice device;
-
     protected SpriteRenderer sr;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        inputScheme = input.controlSchemes[0];
     }
 
     public void FaceDirection(InputAction.CallbackContext context)
     {
         Vector2 pointerPos = context.ReadValue<Vector2>();
 
-        Debug.Log("Control Scheme: " + inputScheme.name);
-
-        if (inputScheme.name == "Keyboard&Mouse")
+        // Måden vi ser hvilket control scheme der bruges. Det er virkelig grimt, men det virker
+        // En bedre måde ville være at tjekke "Control Scheme" men jeg kunne ikke få det til at virke.
+        if (context.control.name == "position")
         { 
             // Finds the direction from the player to the pointer.
             var dir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
@@ -41,20 +36,19 @@ public class AgentRenderer : MonoBehaviour
                 sr.flipX = true;
             }
         }
-        else if (inputScheme.name == "Gamepad")
+        else if (context.control.name == "rightStick")
         {
             // Finds the direction from the player to the pointer.
             var dir = pointerPos.x;
-            Debug.Log(dir);
 
             if (dir > 0)
             {
-                sr.flipX = false;
+                sr.flipX = true;
             }
 
             else if (dir < 0)
             {
-                sr.flipX = true;
+                sr.flipX = false;
             }
         }
         
