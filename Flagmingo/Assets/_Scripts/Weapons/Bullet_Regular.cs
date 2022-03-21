@@ -33,7 +33,7 @@ public class Bullet_Regular : Bullet
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             HitObstacle();
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             HitEnemy();
         }
