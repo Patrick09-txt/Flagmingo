@@ -15,10 +15,10 @@ public class AgentRenderer : MonoBehaviour
 
     public void FaceDirection(InputAction.CallbackContext context)
     {
-        Vector2 pointerInput = context.ReadValue<Vector2>();
+        Vector2 pointerPos = context.ReadValue<Vector2>();
 
         // Finds the direction from the player to the pointer.
-        var dir = (Vector3)pointerInput - transform.position;
+        var dir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
         
         // If the pointer is to the left of up, result is positive and vice versa. IDK, math I guess...
         var result = Vector3.Cross(Vector2.up, dir);
@@ -32,5 +32,10 @@ public class AgentRenderer : MonoBehaviour
         {
             sr.flipX = true;
         }
+    }
+
+    private Vector3 ConvertScreenToWorldPoint(Vector3 pointerPos)
+    {
+        return gameObject.GetComponentInParent<PlayerReferences>().Camera.ScreenToWorldPoint(pointerPos);
     }
 }

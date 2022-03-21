@@ -25,14 +25,30 @@ public class AgentWeapon : MonoBehaviour
     public virtual void AimWeapon(InputAction.CallbackContext context)
     {
         Vector2 pointerPos = context.ReadValue<Vector2>();
+        //var aimDir = new Vector3();
 
-        var aimDir = (Vector3)pointerPos - transform.position;
+        var aimDir = ConvertScreenToWorldPoint((Vector3)pointerPos) - transform.position;
+
+        //if (context.GetType() == typeof(Mouse))
+        //{
+        //    aimDir = AimWeaponMouse((Vector3)pointerPos) - transform.position;
+        //}
+        //else
+        //{
+        //    aimDir = (Vector3)pointerPos - transform.position;
+        //}
+
         // Neat math!
         desiredAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
 
         AdjustWeaponRendering();
 
         transform.rotation = Quaternion.AngleAxis(desiredAngle, Vector3.forward);
+    }
+
+    private Vector3 ConvertScreenToWorldPoint(Vector3 pointerPos)
+    {
+        return gameObject.GetComponentInParent<PlayerReferences>().Camera.ScreenToWorldPoint(pointerPos);
     }
 
     protected void AdjustWeaponRendering()
