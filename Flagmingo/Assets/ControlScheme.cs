@@ -43,6 +43,34 @@ public class ControlScheme : MonoBehaviour
                         OnSetControlScheme?.Invoke(text_KeyboardMouse);
                         break;
                     }
+                case "w":
+                    {
+                        schemeIsSet = true;
+                        controlScheme = ControlSchemes.KeyboardMouse;
+                        OnSetControlScheme?.Invoke(text_KeyboardMouse);
+                        break;
+                    }
+                case "a":
+                    {
+                        schemeIsSet = true;
+                        controlScheme = ControlSchemes.KeyboardMouse;
+                        OnSetControlScheme?.Invoke(text_KeyboardMouse);
+                        break;
+                    }
+                case "s":
+                    {
+                        schemeIsSet = true;
+                        controlScheme = ControlSchemes.KeyboardMouse;
+                        OnSetControlScheme?.Invoke(text_KeyboardMouse);
+                        break;
+                    }
+                case "d":
+                    {
+                        schemeIsSet = true;
+                        controlScheme = ControlSchemes.KeyboardMouse;
+                        OnSetControlScheme?.Invoke(text_KeyboardMouse);
+                        break;
+                    }
 
                 // GAMEPAD / CONTROLLER
                 case "buttonSouth":

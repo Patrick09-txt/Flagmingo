@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class AgentRenderer : MonoBehaviour
 {
     protected SpriteRenderer sr;
+
+    [field: SerializeField] public UnityEvent<bool> OnFlip { get; set; }
 
     private void Awake()
     {
@@ -29,11 +32,13 @@ public class AgentRenderer : MonoBehaviour
             if (result.z > 0)
             {
                 sr.flipX = false;
+                OnFlip?.Invoke(false);
             }
 
             else if (result.z < 0)
             {
                 sr.flipX = true;
+                OnFlip?.Invoke(true);
             }
         }
         else if (context.control.name == "rightStick")
@@ -44,14 +49,15 @@ public class AgentRenderer : MonoBehaviour
             if (dir > 0)
             {
                 sr.flipX = true;
+                OnFlip?.Invoke(true);
             }
 
             else if (dir < 0)
             {
                 sr.flipX = false;
+                OnFlip?.Invoke(false);
             }
         }
-        
     }
 
     private Vector3 ConvertScreenToWorldPoint(Vector3 pointerPos)

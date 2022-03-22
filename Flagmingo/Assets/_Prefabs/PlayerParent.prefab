@@ -182,14 +182,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5124568207900019557}
     - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6582501588768332968}
@@ -198,29 +190,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8179963628113476172}
     - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnFlagNotAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6582501588768332968}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: FlagEnterArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CanvasController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
-      propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3891278602322132128, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -275,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891278603345910559, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: m_InstanceId
-      value: -156498
+      value: -52074
       objectReference: {fileID: 0}
     - target: {fileID: 8721120433231086970, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnSetControlScheme>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target

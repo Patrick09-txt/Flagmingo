@@ -41,6 +41,7 @@ Transform:
   - {fileID: 3891278602370312486}
   - {fileID: 3891278603466196669}
   - {fileID: 8310294800273082092}
+  - {fileID: 8010629607021898470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -317,8 +318,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3816168949475576946}
+        m_TargetAssemblyTypeName: PlayerInteract, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8209de52-a6b4-4c8d-9529-bdacd250dc8a
     m_ActionName: Player/Interact[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 968d8708-7551-49a3-bc2b-e0eb1eac6bef
+    m_ActionName: Player/Drop Item[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -909,6 +926,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d5c198b6d9a7a498fc0dd726258ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <OnFlip>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3816168949475576946}
+        m_TargetAssemblyTypeName: PlayerInteract, Assembly-CSharp
+        m_MethodName: ObjectFlip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3891278603345910556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,7 +1008,7 @@ MonoBehaviour:
   - {x: -0.073739916, y: -0.052900344, z: 0}
   m_ShapePathHash: 1808748223
   m_Mesh: {fileID: 0}
-  m_InstanceId: -142646
+  m_InstanceId: -42000
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1326,36 @@ MonoBehaviour:
   pitchRandomness: 0.05
   shootBulletClip: {fileID: 8300000, guid: 1b3aa6eb9f9d9ee4d808a753cc86a51f, type: 3}
   noAmmoClip: {fileID: 8300000, guid: 56c260531cb172d40b5f6ed2f0f3a601, type: 3}
+--- !u!1 &7919020610612491653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8010629607021898470}
+  m_Layer: 6
+  m_Name: FlagCarrier
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8010629607021898470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919020610612491653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3891278602322132128}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8632953310932831010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,6 +1400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c837e8599326dc43ad0421ea659ead6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectCarrying: {fileID: 0}
+  objectCarryParent: {fileID: 7919020610612491653}
+  objectCarryOffset: {x: -0.56, y: 0.8, z: 0}
   <OnFlagAvailable>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -1345,6 +1410,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: FlagEnterArea
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1369,6 +1446,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <OnFlagPickedUp>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnFlagDropped>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   <OnItemPickedUp>k__BackingField:
