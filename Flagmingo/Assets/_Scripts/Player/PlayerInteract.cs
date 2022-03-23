@@ -29,13 +29,12 @@ public class PlayerInteract : MonoBehaviour
     {
         if (col.CompareTag("Flag"))
         {
-            inFlagRange = true;
-            Debug.Log("<color=blue>Entered Flag Area</color>");
-
             Flag = col.GetComponent<FlagController>();
 
             if (!Flag.isBeingCarried)
             {
+                inFlagRange = true;
+                Debug.Log("<color=blue>Entered Flag Area</color>");
                 OnFlagAvailable?.Invoke();
                 flagAvailable = true;
             }
@@ -46,11 +45,10 @@ public class PlayerInteract : MonoBehaviour
     {
         if (col.CompareTag("Flag"))
         {
-            inFlagRange = false;
-            Debug.Log("<color=blue>Exited Flag Area</color>");
-
             if (!Flag.isBeingCarried)
             {
+                inFlagRange = false;
+                Debug.Log("<color=blue>Exited Flag Area</color>");
                 OnFlagNotAvailable?.Invoke();
                 flagAvailable = false;
             }

@@ -29,8 +29,6 @@ public class AgentMovement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
 
-        if (context.canceled)
-            Debug.LogWarning("Cancelled");
         currentVelocity = CalculateSpeed();
 
         StartCoroutine(CheckInput(context));
