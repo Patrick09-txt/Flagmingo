@@ -57,18 +57,31 @@ public class PlayerInteract : MonoBehaviour
 
     public void Interact()
     {
-        // If you are in range of the flag, we assume that is what you want to pick up/interact with
-        if (inFlagRange)
+        // If you are NOT carrying an object, you can pick it up
+        if (objectCarrying == null)
         {
-            if (Flag != null)
+            // If you are in range of the flag, we assume that is what you want to pick up/interact with
+            if (inFlagRange)
             {
-                TryPickUpFlag(Flag);
+                if (Flag != null)
+                {
+                    TryPickUpFlag(Flag);
+                }
+            }
+
+            else
+            {
+                TryPickUpItem();
             }
         }
+    }
 
-        else
+    public void Drop()
+    {
+        // If you are carrying an object, you can drop it
+        if (objectCarrying != null)
         {
-            TryPickUpItem();
+            objectCarrying.transform.SetParent(null);
         }
     }
 

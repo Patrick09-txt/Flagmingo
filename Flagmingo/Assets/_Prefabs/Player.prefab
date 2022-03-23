@@ -333,7 +333,19 @@ MonoBehaviour:
     m_ActionId: 8209de52-a6b4-4c8d-9529-bdacd250dc8a
     m_ActionName: Player/Interact[/Keyboard/space,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3816168949475576946}
+        m_TargetAssemblyTypeName: PlayerInteract, Assembly-CSharp
+        m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 968d8708-7551-49a3-bc2b-e0eb1eac6bef
     m_ActionName: Player/Drop Item[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 1
@@ -1008,7 +1020,7 @@ MonoBehaviour:
   - {x: -0.073739916, y: -0.052900344, z: 0}
   m_ShapePathHash: 1808748223
   m_Mesh: {fileID: 0}
-  m_InstanceId: -42000
+  m_InstanceId: 47216
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1380,7 @@ GameObject:
   - component: {fileID: 3816168949475576946}
   - component: {fileID: 5263865775894558224}
   m_Layer: 0
-  m_Name: Interaction Collider
+  m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
