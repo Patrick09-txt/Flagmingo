@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8897347477429258521}
   - component: {fileID: 9080010955161796012}
+  - component: {fileID: 7047647876751691178}
   m_Layer: 0
   m_Name: PlayerParent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +173,18 @@ MonoBehaviour:
   InputManager: {fileID: 0}
   Camera: {fileID: 5124568207900019557}
   Player: {fileID: 596528825464128046}
+--- !u!114 &7047647876751691178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503010863260826631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef03c624b5051047b523abd91add3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4487787052325093043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891278603345910559, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: m_InstanceId
-      value: -75790
+      value: -128398
       objectReference: {fileID: 0}
     - target: {fileID: 8721120433231086970, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnSetControlScheme>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
