@@ -18,6 +18,8 @@ public class AgentMovement : MonoBehaviour
     protected Vector2 currentVelocity;
     protected float horizontal;
     protected float vertical;
+    
+    private bool hasFlag;
 
     private void Awake()
     {
@@ -29,14 +31,21 @@ public class AgentMovement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
 
-        currentVelocity = CalculateSpeed();
+        if (hasFlag)
+        {
+            currentVelocity = CalculateSpeed(MovementData.flagSpeed);
+        }
+        else
+        {
+            currentVelocity = CalculateSpeed(MovementData.maxSpeed);
+        }
 
         StartCoroutine(CheckInput(context));
     }
 
-    private Vector2 CalculateSpeed()
+    private Vector2 CalculateSpeed(float speed)
     {
-        return new Vector2(horizontal * MovementData.maxSpeed, vertical * MovementData.maxSpeed);
+        return new Vector2(horizontal * speed, vertical * speed);
     }
 
     private void FixedUpdate()
@@ -52,5 +61,15 @@ public class AgentMovement : MonoBehaviour
         vertical = context.ReadValue<Vector2>().y;
 
         currentVelocity = CalculateSpeed();
+    }
+
+    public void PickedUpFlag()
+    {
+        hasFlag = true;
+    }
+
+    public void DroppedFlag()
+    {
+        hasFlag = false;
     }
 }
