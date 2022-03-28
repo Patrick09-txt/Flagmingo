@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flag
+  - WinArea
+  - PlayerManager
   layers:
   - Default
   - TransparentFX

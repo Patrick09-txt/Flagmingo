@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum PlayerNumber
+{
+    One,
+    Two,
+    Three,
+    Four
+}
 public class Player : MonoBehaviour, IAgent, IHittable
 {
     [field: SerializeField] public int Health { get; private set; }
 
     [field: SerializeField] public UnityEvent OnDie { get; set; }
     [field: SerializeField] public UnityEvent OnGetHit { get; set; }
+
+    public PlayerNumber PlayerNumber;
 
     private bool dead = false;
 

@@ -109,6 +109,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  PlayerNumber: 0
 --- !u!114 &3891278602322132131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +1021,7 @@ MonoBehaviour:
   - {x: -0.073739916, y: -0.052900344, z: 0}
   m_ShapePathHash: 1808748223
   m_Mesh: {fileID: 0}
-  m_InstanceId: -33004
+  m_InstanceId: -74672
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8010629607021898470}
+  - component: {fileID: 5068123245550928605}
   m_Layer: 6
   m_Name: FlagCarrier
   m_TagString: Untagged
@@ -1368,6 +1370,23 @@ Transform:
   m_Father: {fileID: 3891278602322132128}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5068123245550928605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919020610612491653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c5226338e3acc49920e9bb7d8426ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasFlag: 0
+  playerNumber: 0
+  <OnWinAreaEnter>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8632953310932831010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1491,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5068123245550928605}
+        m_TargetAssemblyTypeName: FlagCarrier, Assembly-CSharp
+        m_MethodName: Flag
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   <OnFlagDropped>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -1479,6 +1510,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
         m_MethodName: FlagDropped
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5068123245550928605}
+        m_TargetAssemblyTypeName: FlagCarrier, Assembly-CSharp
+        m_MethodName: Flag
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

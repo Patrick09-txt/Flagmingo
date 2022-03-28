@@ -104,7 +104,7 @@ public class PlayerInteract : MonoBehaviour
             objectCarrying = flag.gameObject;
             ObjectFollowPlayer(flag.gameObject, objectCarryParent.transform, true, objectCarryOffset, new Vector3(0, 0, 70));
 
-            Debug.Log("<color=pink>Flag Picked Up!</color>");
+            Debug.Log("<color=white>Flag Picked Up!</color>");
         }
     }
 
@@ -115,13 +115,13 @@ public class PlayerInteract : MonoBehaviour
         flagAvailable = true;
         flag.isBeingCarried = false;
 
-        Debug.Log("<color=pink>Flag Dropped!</color>");
+        Debug.Log("<color=white>Flag Dropped!</color>");
     }
 
     private void TryPickUpItem()
     {
         OnItemPickedUp?.Invoke();
-        Debug.Log("<color=pink>Item Picked Up!</color>");
+        Debug.Log("<color=white>Attempted Item Picked Up!</color>");
     }
 
     private void ObjectFollowPlayer(GameObject obj, Transform parent, bool inheritRotation, Vector3 offset, Vector3 rotation)

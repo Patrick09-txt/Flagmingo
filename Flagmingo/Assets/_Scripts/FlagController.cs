@@ -11,7 +11,7 @@ public class FlagController : MonoBehaviour
     [field: SerializeField] public UnityEvent<bool> OnFlagGrabAreaEnter { get; set; }
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         CircleCollider2D grabArea = gameObject.AddComponent<CircleCollider2D>();
         grabArea.offset = new Vector2(0, 0);
