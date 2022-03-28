@@ -40,7 +40,7 @@ public class AgentMovement : MonoBehaviour
             currentVelocity = CalculateSpeed(MovementData.maxSpeed);
         }
 
-        StartCoroutine(CheckInput(context));
+        //StartCoroutine(CheckInput(context));
     }
 
     private Vector2 CalculateSpeed(float speed)
@@ -54,14 +54,14 @@ public class AgentMovement : MonoBehaviour
         rb.velocity = currentVelocity;
     }
 
-    private IEnumerator CheckInput(InputAction.CallbackContext context)
-    {
-        yield return null;
-        horizontal = context.ReadValue<Vector2>().x;
-        vertical = context.ReadValue<Vector2>().y;
+    //private IEnumerator CheckInput(InputAction.CallbackContext context)
+    //{
+    //    yield return null;
+    //    horizontal = context.ReadValue<Vector2>().x;
+    //    vertical = context.ReadValue<Vector2>().y;
 
-        currentVelocity = CalculateSpeed();
-    }
+    //    currentVelocity = CalculateSpeed();
+    //}
 
     public void PickedUpFlag()
     {
