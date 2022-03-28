@@ -10,12 +10,17 @@ public class FlagCarrier : MonoBehaviour
     [SerializeField] private PlayerNumber playerNumber;
     private FlagWinArea winArea;
     private float distanceToWinArea;
+    private WinManager winManager;
+
+    private bool called = false;
 
     [field: SerializeField] public UnityEvent OnWinAreaEnter { get; set; }
 
     // Start is called before the first frame update
     void Awake()
     {
+        winManager = GameObject.FindGameObjectWithTag("WinManager")?.GetComponent<WinManager>();
+
         GameObject[] winAreas = GameObject.FindGameObjectsWithTag("WinArea");
         foreach (GameObject a in winAreas)
         {
@@ -32,14 +37,26 @@ public class FlagCarrier : MonoBehaviour
     {
         distanceToWinArea = Vector2.Distance(transform.position, winArea.transform.position);
 
-        if (distanceToWinArea < winArea.WinAreaSize)
+        if (!called)
         {
-            Debug.Log("Player entered their own win area!");
-            OnWinAreaEnter?.Invoke();
-
-            if (HasFlag)
+            if (distanceToWinArea < winArea.WinAreaSize)
             {
-                Debug.Log("<color=yellow>Player wins the round!!!</color>");
+                called = true;
+
+                Debug.Log("Player entered their own win area!");
+                OnWinAreaEnter?.Invoke();
+
+                if (HasFlag)
+                {
+                    winManager.NewWin(playerNumber);
+                }
+            }
+        }
+        else
+        {
+            if (distanceToWinArea > winArea.WinAreaSize)
+            {
+                called = false;
             }
         }
     }
