@@ -81,7 +81,14 @@ public class PlayerInteract : MonoBehaviour
         // If you are carrying an object, you can drop it
         if (objectCarrying != null)
         {
+            if (Flag != null)
+            {
+                DropFlag(Flag);
+            }
+
             objectCarrying.transform.SetParent(null);
+            objectCarrying.transform.rotation = Quaternion.Euler(0, 0, 0);
+            objectCarrying = null;
         }
     }
 

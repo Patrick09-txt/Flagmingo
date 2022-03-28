@@ -182,6 +182,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5124568207900019557}
     - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
+      propertyPath: <OnFlagDropped>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8179963628113476172}
+    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
+      propertyPath: <OnFlagPickedUp>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8179963628113476172}
+    - target: {fileID: 3816168949475576946, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnFlagAvailable>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6582501588768332968}
@@ -247,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891278603345910559, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: m_InstanceId
-      value: -52074
+      value: -35024
       objectReference: {fileID: 0}
     - target: {fileID: 8721120433231086970, guid: 13f1b9551f0222349bc828470b111bda, type: 3}
       propertyPath: <OnSetControlScheme>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target

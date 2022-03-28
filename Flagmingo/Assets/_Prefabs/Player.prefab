@@ -1020,7 +1020,7 @@ MonoBehaviour:
   - {x: -0.073739916, y: -0.052900344, z: 0}
   m_ShapePathHash: 1808748223
   m_Mesh: {fileID: 0}
-  m_InstanceId: 47216
+  m_InstanceId: -33004
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,10 +1459,34 @@ MonoBehaviour:
         m_CallState: 2
   <OnFlagPickedUp>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: FlagPickedUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnFlagDropped>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: FlagDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnItemPickedUp>k__BackingField:
     m_PersistentCalls:
       m_Calls: []

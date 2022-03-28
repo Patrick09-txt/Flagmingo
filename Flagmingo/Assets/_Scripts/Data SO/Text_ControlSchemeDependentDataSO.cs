@@ -7,5 +7,6 @@ public class Text_ControlSchemeDependentDataSO : ScriptableObject
 {
     [SerializeField] public string PickUpFlag_Text;
     [SerializeField] public string PickUpItem_Text;
+    [SerializeField] public string Drop_Text;
     [SerializeField] public string InteractNPC_Text;
 }
