@@ -37907,6 +37907,7 @@ GameObject:
   - component: {fileID: 347990565}
   - component: {fileID: 347990564}
   - component: {fileID: 347990566}
+  - component: {fileID: 347990567}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -38020,8 +38021,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62731641907406b408396004d9d0374e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  spawnPointsAvailable:
+  playerSpawn: {fileID: 347990567}
+--- !u!114 &347990567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347990563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef03c624b5051047b523abd91add3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Players: []
+  AllSpawnPoints:
   - {fileID: 2136894583}
   - {fileID: 1220936887}
 --- !u!1 &359056496
