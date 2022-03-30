@@ -15,7 +15,7 @@ public class PlayerReferences : MonoBehaviour
         if (InputManager != null)
         {
             this.Player.PlayerNumber = (PlayerNumber)InputManager.playerCount - 1;
-            Debug.Log("Set player number to " + this.Player.PlayerNumber + ", based on there being " + InputManager.playerCount + " players in the game.");
+            Debug.Log(Colorize.Player("Set player number to " + this.Player.PlayerNumber + ", based on there being " + InputManager.playerCount + " players in the game."));
         }
     }
 }

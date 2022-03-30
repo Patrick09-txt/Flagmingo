@@ -20,12 +20,12 @@ public class WinManager : MonoBehaviour
 
         if (winList.Count >= rounds)
         {
-            Debug.Log($"<color=red>Player {player} won the game!!</color>");
+            Debug.Log(Colorize.Round($"Player {player} won the game!!"));
             OnGameWin?.Invoke();
         }
         else
         {
-            Debug.Log($"<color=yellow>Player {player} won round {currentRound}!</color>");
+            Debug.Log(Colorize.Round($"Player {player} won round {currentRound}!"));
             OnRoundWin?.Invoke();
         }
     }

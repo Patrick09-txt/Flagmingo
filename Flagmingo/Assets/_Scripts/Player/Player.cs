@@ -23,7 +23,7 @@ public class Player : MonoBehaviour, IAgent, IHittable
 
     public void GetHit(int damage, GameObject damageDealer)
     {
-        Debug.Log("Player got hit");
+        Debug.Log(Colorize.Player("Player got hit"));
 
         if (!dead)
         {
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour, IAgent, IHittable
             OnGetHit?.Invoke();
             if (Health <= 0)
             {
-                Debug.Log("Player diead");
+                Debug.Log(Colorize.Player("Player dieaded"));
 
                 OnDie?.Invoke();
                 dead = true;

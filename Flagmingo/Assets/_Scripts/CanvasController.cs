@@ -23,7 +23,7 @@ public class CanvasController : MonoBehaviour
 
     public void SetTextScheme(Text_ControlSchemeDependentDataSO scheme)
     {
-        Debug.Log("Updating text scheme: " + scheme.name);
+        Debug.Log(Colorize.Input("Updating text scheme: " + scheme.name));
         text_schemeDependent = scheme;
     }
 
@@ -31,7 +31,7 @@ public class CanvasController : MonoBehaviour
     {
         if (bottomText != null && !flagPickedUp)
         {
-            Debug.Log("Updating bottom text: " + text_schemeDependent.PickUpFlag_Text);
+            Debug.Log(Colorize.UI("Updating bottom text: " + text_schemeDependent.PickUpFlag_Text));
             bottomText.text = text_schemeDependent.PickUpFlag_Text;
         }
     }
@@ -42,7 +42,7 @@ public class CanvasController : MonoBehaviour
 
         if (bottomText != null)
         {
-            Debug.Log("Updating bottom text: " + text_schemeDependent.Drop_Text);
+            Debug.Log(Colorize.UI("Updating bottom text: " + text_schemeDependent.Drop_Text));
             bottomText.text = text_schemeDependent.Drop_Text;
         }
     }

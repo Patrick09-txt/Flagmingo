@@ -43,7 +43,7 @@ public class FlagCarrier : MonoBehaviour
             {
                 called = true;
 
-                Debug.Log("Player entered their own win area!");
+                //Debug.Log("Player entered their own win area!");
                 OnWinAreaEnter?.Invoke();
 
                 if (HasFlag)

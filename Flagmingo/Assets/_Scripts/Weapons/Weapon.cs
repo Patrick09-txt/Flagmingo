@@ -41,13 +41,13 @@ public class Weapon : MonoBehaviour
     public void TryShooting()
     {
         isShooting = true;
-        Debug.Log("Trying to shoot!!");
+        Debug.Log(Colorize.Attack("Trying to shoot!!"));
     }
 
     public void StopShooting()
     {
         isShooting = false;
-        Debug.Log("STOPPED SHOOTING!!");
+        Debug.Log(Colorize.Attack("STOPPED SHOOTING!!"));
     }
 
     public void Reload(int ammo)
@@ -103,7 +103,7 @@ public class Weapon : MonoBehaviour
     private void ShootBullet()
     {
         SpawnBullet(muzzle.transform.position, CalculateAngle(muzzle));
-        Debug.Log("Shooting A Bullet");
+        Debug.Log(Colorize.Attack("Shooting A Bullet"));
     }
 
     private void SpawnBullet(Vector3 position, Quaternion rotation)

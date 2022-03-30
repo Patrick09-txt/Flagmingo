@@ -34,7 +34,7 @@ public class PlayerInteract : MonoBehaviour
             if (!Flag.isBeingCarried)
             {
                 inFlagRange = true;
-                Debug.Log("<color=blue>Entered Flag Area</color>");
+                Debug.Log(Colorize.Flag("Entered Flag Area"));
                 OnFlagAvailable?.Invoke();
                 flagAvailable = true;
             }
@@ -48,7 +48,7 @@ public class PlayerInteract : MonoBehaviour
             if (!Flag.isBeingCarried)
             {
                 inFlagRange = false;
-                Debug.Log("<color=blue>Exited Flag Area</color>");
+                Debug.Log(Colorize.Flag("Exited Flag Area"));
                 OnFlagNotAvailable?.Invoke();
                 flagAvailable = false;
             }
@@ -104,7 +104,7 @@ public class PlayerInteract : MonoBehaviour
             objectCarrying = flag.gameObject;
             ObjectFollowPlayer(flag.gameObject, objectCarryParent.transform, true, objectCarryOffset, new Vector3(0, 0, 70));
 
-            Debug.Log("<color=white>Flag Picked Up!</color>");
+            Debug.Log(Colorize.Flag("Flag Picked Up!"));
         }
     }
 
@@ -115,13 +115,13 @@ public class PlayerInteract : MonoBehaviour
         flagAvailable = true;
         flag.isBeingCarried = false;
 
-        Debug.Log("<color=white>Flag Dropped!</color>");
+        Debug.Log(Colorize.Flag("Flag Dropped!"));
     }
 
     private void TryPickUpItem()
     {
         OnItemPickedUp?.Invoke();
-        Debug.Log("<color=white>Attempted Item Picked Up!</color>");
+        Debug.Log(Colorize.Item("Attempted Item Picked Up!"));
     }
 
     private void ObjectFollowPlayer(GameObject obj, Transform parent, bool inheritRotation, Vector3 offset, Vector3 rotation)

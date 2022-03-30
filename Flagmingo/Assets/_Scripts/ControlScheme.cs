@@ -100,6 +100,8 @@ public class ControlScheme : MonoBehaviour
                         break;
                     }
             }
+
+            Debug.Log(Colorize.Input($"Control Scheme set to: {controlScheme}"));
         }
     }
 }

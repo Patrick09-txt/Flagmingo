@@ -16,7 +16,7 @@ public class PlayerSpawn : MonoBehaviour
 
     public void MovePlayerToSpawn(GameObject player)
     {
-        Debug.Log("Moved player to spawn point: " + _spawnPointsAvailable[0]);
+        Debug.Log(Colorize.Spawn("Moved player to spawn point: " + _spawnPointsAvailable[0]));
 
         player.transform.position = _spawnPointsAvailable[0].transform.position;
         _spawnPointsAvailable.Remove(_spawnPointsAvailable[0]);

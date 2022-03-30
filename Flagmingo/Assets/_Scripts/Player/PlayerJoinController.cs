@@ -8,7 +8,8 @@ public class PlayerJoinController : MonoBehaviour
 
     public void OnPlayerJoined()
     {
-        Debug.Log($"<color=lime>Player spawned</color>");
+        Debug.Log(Colorize.Spawn($"Player spawned"));
+
         GameObject[] joinedPlayer = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in joinedPlayer)
         {
@@ -16,13 +17,14 @@ public class PlayerJoinController : MonoBehaviour
             {
                 playerSpawn.Players.Add(player);
                 playerSpawn.MovePlayerToSpawn(player);
-                Debug.Log($"Added player {playerSpawn.Players.Count} to the list");
+
+                Debug.Log(Colorize.Player($"Added player {playerSpawn.Players.Count} to the list"));
             }
         }
     }
 
     public void OnPlayerLeft()
     {
-        Debug.Log("<color=green>A player left the game</color>");
+        Debug.Log(Colorize.Player("A player left the game"));
     }
 }

@@ -42,11 +42,11 @@ public class Bullet_Regular : Bullet
 
     private void HitEnemy()
     {
-        Debug.Log("Hit enemy");
+        Debug.Log(Colorize.Attack("Hit enemy"));
     }
 
     private void HitObstacle()
     {
-        Debug.Log("Hit obstacle");
+        Debug.Log(Colorize.Attack("Hit obstacle"));
     }
 }
