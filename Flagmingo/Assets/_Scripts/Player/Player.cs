@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IAgent, IHittable
 {
     [field: SerializeField] public int Health { get; private set; }
 
+    [field: SerializeField] public UnityEvent<PlayerJoinController> OnSpawn { get; set; }
     [field: SerializeField] public UnityEvent OnDie { get; set; }
     [field: SerializeField] public UnityEvent OnGetHit { get; set; }
 
@@ -39,5 +40,10 @@ public class Player : MonoBehaviour, IAgent, IHittable
                 Destroy(gameObject, 0.25f);
             }
         }
+    }
+
+    public void Spawn(PlayerJoinController joinController)
+    {
+        OnSpawn?.Invoke(joinController);
     }
 }

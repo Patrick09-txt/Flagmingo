@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerScarfAnimController
+  m_Controller: {fileID: 9100000, guid: 36cdb3336a2863146b05c9848d058714, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 40066564da1a8754a98324e3aababfd7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 924d476f241eef343850e08621f107fa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 47c8b95d98bc66448a8ba293b48a94c3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bb791876fbb66b54687e83ca131e0886, type: 2}

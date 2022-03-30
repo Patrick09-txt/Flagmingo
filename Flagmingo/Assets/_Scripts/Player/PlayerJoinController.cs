@@ -1,10 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJoinController : MonoBehaviour
 {
     [SerializeField] private PlayerSpawn playerSpawn;
+
+    public List<Color> PlayerColors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow };
 
     public void OnPlayerJoined()
     {
@@ -13,6 +14,8 @@ public class PlayerJoinController : MonoBehaviour
         GameObject[] joinedPlayer = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in joinedPlayer)
         {
+            player.GetComponentInChildren<Player>().Spawn(this);
+
             if (!playerSpawn.Players.Contains(player))
             {
                 playerSpawn.Players.Add(player);
