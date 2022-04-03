@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public enum PlayerNumber
 {
@@ -13,6 +14,7 @@ public enum PlayerNumber
 public class Player : MonoBehaviour, IAgent, IHittable
 {
     [field: SerializeField] public int Health { get; private set; }
+    // [field: SerializeField] public Slider healthSlider { get; set; }
 
     [field: SerializeField] public UnityEvent<PlayerJoinController> OnSpawn { get; set; }
     [field: SerializeField] public UnityEvent OnDie { get; set; }
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour, IAgent, IHittable
 
     private bool dead = false;
 
+    // public void UpdateHealthSlider()
+    // {
+    //     healthSlider.value = Health;
+    // }
+
     public void GetHit(int damage, GameObject damageDealer)
     {
         Debug.Log(Colorize.Player("Player got hit"));
@@ -30,6 +37,7 @@ public class Player : MonoBehaviour, IAgent, IHittable
         {
             Health -= damage;
             OnGetHit?.Invoke();
+            // UpdateHealthSlider();
             if (Health <= 0)
             {
                 Debug.Log(Colorize.Player("Player dieaded"));
