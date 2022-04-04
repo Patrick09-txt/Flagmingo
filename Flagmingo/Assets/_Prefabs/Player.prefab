@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 10
+  <healthSlider>k__BackingField: {fileID: 0}
   <OnSpawn>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -520,7 +521,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891278602322132134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -536,7 +537,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891278602322132134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -570,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891278602370312487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3891278602404276460}
@@ -619,7 +620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891278602404276461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3891278603379418162}
@@ -703,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45754a6d52a987f428ffbe0eeaaf26a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerOrigin: {fileID: 3891278602322132134}
   muzzle: {fileID: 3891278603379418163}
   _ammo: 10
   weaponData: {fileID: 11400000, guid: 8682dfbd31af473429c1a6f046c51a3c, type: 2}
@@ -1193,7 +1195,7 @@ MonoBehaviour:
   - {x: -0.073739916, y: -0.052900344, z: 0}
   m_ShapePathHash: 1808748223
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32926
+  m_InstanceId: 37038
 --- !u!1 &3891278603379418163
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ public class Bullet_Regular : Bullet
 {
     protected Rigidbody2D rigidbody2D;
 
+    [HideInInspector] public GameObject PlayerOrigin;
+
     public override BulletDataSO BulletData
     {
         get => base.BulletData;
@@ -29,6 +31,8 @@ public class Bullet_Regular : Bullet
     {
         var hittable = collision.GetComponent<IHittable>();
         hittable?.GetHit(BulletData.Damage, gameObject);
+
+        
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {

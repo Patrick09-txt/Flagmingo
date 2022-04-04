@@ -8,10 +8,12 @@ using Random = UnityEngine.Random;
 public class Weapon : MonoBehaviour
 {
     // PROPERTIES
+    [SerializeField] protected GameObject PlayerOrigin;
     [SerializeField] protected GameObject muzzle;
 
     [SerializeField] protected int _ammo = 10;
     [SerializeField] protected WeaponDataSO weaponData;
+
 
     public int Ammo
     {
@@ -112,6 +114,7 @@ public class Weapon : MonoBehaviour
         if(bullet != null)
         {
             bullet.GetComponent<Bullet>().BulletData = weaponData.BulletData;
+            bullet.GetComponent<Bullet_Regular>().PlayerOrigin = PlayerOrigin;
 
             bullet.transform.position = position;
             bullet.transform.rotation = rotation;
