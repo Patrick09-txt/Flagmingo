@@ -37,7 +37,9 @@ public class Bullet_Regular : Bullet
         {
             HitEnemy();
         }
-        Destroy(gameObject);
+        
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void HitEnemy()
