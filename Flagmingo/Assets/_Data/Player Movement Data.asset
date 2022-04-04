@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Player Movement Data
   m_EditorClassIdentifier: 
   maxSpeed: 6
+  flagSpeed: 4.5
   acceleration: 50
   deceleration: 100
