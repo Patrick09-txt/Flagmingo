@@ -116,6 +116,8 @@ public class Weapon : MonoBehaviour
             bullet.transform.position = position;
             bullet.transform.rotation = rotation;
             bullet.SetActive(true);
+
+            StartCoroutine(bullet.GetComponent<Bullet_Regular>().TimerToDisable());
         }
 
         //var newBullet = Instantiate(weaponData.BulletData.BulletPrefab, position, rotation);

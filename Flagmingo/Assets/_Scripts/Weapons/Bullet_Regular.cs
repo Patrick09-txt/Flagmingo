@@ -33,12 +33,14 @@ public class Bullet_Regular : Bullet
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
             HitObstacle();
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+            gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             HitEnemy();
+            gameObject.SetActive(false);
         }
         
-        gameObject.SetActive(false);
         //Destroy(gameObject);
     }
 
@@ -50,5 +52,13 @@ public class Bullet_Regular : Bullet
     private void HitObstacle()
     {
         Debug.Log(Colorize.Attack("Hit obstacle"));
+    }
+
+    public IEnumerator TimerToDisable()
+    {
+        yield return new WaitForSeconds(2);
+
+        if (gameObject.activeInHierarchy)
+            gameObject.SetActive(false);
     }
 }
